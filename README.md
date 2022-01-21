@@ -1,2 +1,0 @@
-# javascript
-projetos em Javascript
