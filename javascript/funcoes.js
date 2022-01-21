@@ -21,6 +21,9 @@ function criptografa(letra) {
 	  	return letra
 	  	break;
 	}
+
+
+
 }
 
 function copiaTexto(campoTexto) {

@@ -1,6 +1,6 @@
 var btnCriptografar = document.querySelector(".btn-criptografar");
 var txtCripto = document.querySelector(".texto-entrada");
-var	btnLiga = document.querySelector(".info-check");
+var	check_descrip_automatico = document.querySelector(".info-check");
 var msg = document.querySelector(".texto-saida")
 var btnDescripto = document.querySelector(".btn-descriptografar");
 var btnCopiar = document.querySelector(".btn-copiar");
@@ -8,7 +8,7 @@ var msgCripto = "";
 
 limpaCampos()
 
-btnLiga.addEventListener("click",function(evento){
+check_descrip_automatico.addEventListener("click",function(evento){
 
 	evento.preventDefault ; 
 
@@ -19,21 +19,23 @@ btnCopiar.addEventListener("click",function(evento){
 
 	evento.preventDefault();
 
-	copiaTexto(msg)
+	copiaTexto(msg);
+
+	limpaCampos();
 })
 
 btnDescripto.addEventListener("click",function(evento){
 
 	evento.preventDefault();
 
-	msgCripto = txtCripto.value
+	msgCripto = txtCripto.value;
 
-	msg.value=descriptografa(msgCripto)
+	msg.value=descriptografa(msgCripto);
 })
 
 txtCripto.addEventListener("keypress",function(evento){
 
-	if (btnLiga.checked){
+	if (check_descrip_automatico.checked){
 
 		var tecla = evento.key;
 
