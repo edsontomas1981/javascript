@@ -66,13 +66,13 @@ cronometro1 = Cronometro()
 
 cronometro1.start()
 '''
-class Agenda():
+'''class Agenda():
     def __init__(self):
         self.nome={}
         self.contatos = {}
         
     def incluir (self,nome,email,telefone):
-        self.nome[nome]={nome:{'telefone':telefone,'email':email}}
+        self.nome[nome]={'telefone':telefone,'email':email}
     
     def alterar (self,nome):
         tel = input('Digite o novo numero de telefone : ')
@@ -81,14 +81,18 @@ class Agenda():
     
     def listaContatos(self):
         for printaContatos in self.nome:
-            nome = printaContatos
+            nome = printaContatos 
             tel = self.nome[printaContatos]['telefone']
-            email = self.nome[printaContatos].values()
-            print(f'Nome : {nome} | Telefone : {tel} | Email {email}')
+            email = self.nome[printaContatos]['email']
+            print(f'Nome : {nome}, E-mail :{email}, Telefone :{tel}')
             
-            
-            
-                
+    def buscaContato(self,nome):
+        tel = self.nome[nome]['telefone']
+        email = self.nome[nome]['email']
+        return nome,tel,email
+    def apagaContato(self,nome):
+        del self.nome[nome]
+    
     def __repr__(self):
         return f'{self.nome}'
     
@@ -96,6 +100,57 @@ contato = Agenda()
 contato.incluir('Edson','edson@edson','11-96926-2277')
 contato.incluir('Sandra','sandra@edson','11-96926-2277')
 contato.incluir('Ana','ana@edson','11-96926-2277')
-contato.listaContatos()
+contato.apagaContato('Ana')
+contato.listaContatos()'''
+'''class Cliente:
+    def __init__ (self,nome,idade,email) :
+        self.nome = {nome:{'idade':idade,'E-mail':email}}
+        
+    def __repr__ (self):
+        for elemento in self.nome:
+            idade = self.nome[elemento]['idade']
+            email = self.nome[elemento]['E-mail']
+        return f' Nome : {elemento}\n Idade : {idade}\n E-mail : {email}'
+cliente = Cliente('Edson',42,'edson@edson.com.br')
+print(cliente)'''
+'''
+
+Vale
+10
+Enunciado
+Com base no exercício anterior, crie um sistema de cadastro e a classe Cliente. Seu programa deve perguntar se o usuário quer cadastrar um novo cliente, alterar um cadastro ou sair.
+
+Dica: Você pode fazer esse exercício criando uma classe Sistema, que irá controlar o sistema de cadastros. Essa classe deve ter o atributo cadastro e os métodos para imprimir os cadastrados, cadastrar um novo cliente, alterar um cadastro ou sair.
+'''
+
+class Cliente:
+    def __init__ (self,nome,idade,email) :
+        self.nome = {nome:{'idade':idade,'email':email}}
+        
+    def __repr__ (self):
+        for elemento in self.nome:
+            idade = self.nome[elemento]['idade']
+            email = self.nome[elemento]['email']
+        return f' Nome : {elemento}\n Idade : {idade}\n E-mail : {email}'
+    
+class Sistema:
+    def __init__(self):
+        self.cliente = ''
+    def incluir (self,nome,idade,email):
+        self.cliente = Cliente(nome,idade,email)
+        
+    def alterar (self,nome,idade,email):
+        self.cliente.nome.update({nome:{'idade':idade,'email':email}})
+        
+iniciaSist = Sistema()
+iniciaSist.incluir('edson',41,'edson@edson')
+iniciaSist.alterar('Ana',14,'edson@edson')
+
+print(iniciaSist.cliente)
+
+        
+        
+
+
 
 
