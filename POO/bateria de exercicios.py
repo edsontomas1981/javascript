@@ -44,7 +44,7 @@ print(q1.calculaArea())'''
     O programa também deve pedir as medidas de cada piso e rodapé
 '''
 
-class Retangulo:
+'''class Retangulo:
     def __init__(self,base,altura):
         self.base = base
         self.altura = altura
@@ -73,7 +73,7 @@ areaLin = areaRetangulo.areaLinear
 qtdePiso = float(areaRet)/piso
 qtdeRodape = float(areaLin)/rodape
 
-print(f' {qtdePiso} , {qtdeRodape} ')
+print(f' {qtdePiso} , {qtdeRodape} ')'''
 
 
 
