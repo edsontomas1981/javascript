@@ -1,0 +1,141 @@
+[
+    {
+        "id": "DE40+001",
+        "marca": "CALOI",
+        "categoria": "Aro 20",
+        "cor": "preta",
+        "status":1
+    },
+    {
+        "id": "DE40+002",
+        "marca": "MORMAII",
+        "categoria": "Aro 26",
+        "cor": "branca",
+        "status":0
+    },
+    {
+        "id": "DE40+003",
+        "marca": "BTWIN",
+        "categoria": "Aro 20",
+        "cor": "cinza",
+        "status":0
+    },
+    {
+        "id": "DE40+004",
+        "marca": "BTWIN",
+        "categoria": "Aro 20",
+        "cor": "rosa",
+        "status":0
+    },
+    {
+        "id": "DE40+005",
+        "marca": "BTWIN",
+        "categoria": "Aro 20",
+        "cor": "amarela",
+        "status":0
+    },
+    {
+        "id": "DE40+006",
+        "marca": "CALOI",
+        "categoria": "Aro 26",
+        "cor": "roxa",
+        "status":0
+    },
+    {
+        "id": "DE40+007",
+        "marca": "BTWIN",
+        "categoria": "Aro 26",
+        "cor": "bege",
+        "status":0
+    },
+    {
+        "id": "DE40+008",
+        "marca": "MORMAII",
+        "categoria": "Aro 26",
+        "cor": "cinza",
+        "status":0
+    },
+    {
+        "id": "DE40+009",
+        "marca": "BTWIN",
+        "categoria": "Aro 20",
+        "cor": "branca",
+        "status":0
+    },
+    {
+        "id": "DE40+010",
+        "marca": "MORMAII",
+        "categoria": "Aro 26",
+        "cor": "preta",
+        "status":0
+    },
+    {
+        "id": "DE40+011",
+        "marca": "BTWIN",
+        "categoria": "Aro 20",
+        "cor": "laranja",
+        "status":0
+    },
+    {
+        "id": "DE40+012",
+        "marca": "MORMAII",
+        "categoria": "Aro 26",
+        "cor": "azul",
+        "status":0
+    },
+    {
+        "id": "DE40+013",
+        "marca": "MORMAII",
+        "categoria": "Aro 20",
+        "cor": "rosa",
+        "status":0
+    },
+    {
+        "id": "DE40+014",
+        "marca": "BTWIN",
+        "categoria": "Aro 20",
+        "cor": "branca",
+        "status":0
+    },
+    {
+        "id": "DE40+015",
+        "marca": "BTWIN",
+        "categoria": "Aro 20",
+        "cor": "azul",
+        "status":0
+    },
+    {
+        "id": "DE40+016",
+        "marca": "CALOI",
+        "categoria": "Aro 26",
+        "cor": "branca",
+        "status":0
+    },
+    {
+        "id": "DE40+017",
+        "marca": "CALOI",
+        "categoria": "Aro 26",
+        "cor": "preta",
+        "status":0
+    },
+    {
+        "id": "DE40+018",
+        "marca": "MORMAII",
+        "categoria": "Aro 26",
+        "cor": "marrom",
+        "status":0
+    },
+    {
+        "id": "DE40+019",
+        "marca": "MORMAII",
+        "categoria": "Aro 20",
+        "cor": "branca",
+        "status":0
+    },
+    {
+        "id": "DE40+020",
+        "marca": "CALOI",
+        "categoria": "Aro 26",
+        "cor": "rosa",
+        "status":1
+    }]
