@@ -4,7 +4,7 @@
         "marca": "CALOI",
         "categoria": "Aro 20",
         "cor": "preta",
-        "status":1
+        "status":0
     },
     {
         "id": "DE40+002",
@@ -137,5 +137,5 @@
         "marca": "CALOI",
         "categoria": "Aro 26",
         "cor": "rosa",
-        "status":1
+        "status":0
     }]
