@@ -14,14 +14,12 @@ dados = carregaDados()
 class Cliente:
     pedido = []
     numPed = 0
-
     def __init__(self,nome,tipoAluguel):
         self.nome = nome
         self.tipoAluguel = tipoAluguel # 1 por hora |2 por Dia | 3 por semana |4 Familia 
         self.bicicletas = []
         self.diaLocacao = ''
         self.horaLocacao = ''
- 
     def __repr__(self):
         tipoLocacao = 0
         nome = self.nome
@@ -40,8 +38,7 @@ class Cliente:
         elif self.tipoAluguel == 3:
             tipoLocacao = 'por semana'
         return f'{nome} sua modalidade de locação é {tipoLocacao} você tem o total de {qtde} bikes locadas \n {resposta} '
-
-    def verBicicletas (self):
+    def mostraBikesDisponiveis (self):
         bikesDisponiveis = ''
         for i in range (len(dados)):
             status =  dados[i]['status']
@@ -52,15 +49,10 @@ class Cliente:
                 cor = dados[i]['cor']
                 bikesDisponiveis += 'Id : '+id+'| Marca : ' +marca+'| Categoria : '+categoria+ '| Cor : '+cor +'\n'
         return bikesDisponiveis
-    
-    def gerarPedido (self,dtLoc):
-        bikes = {}
-        pedido = [] 
-        Cliente.numPed += 1
-        for i in self.bicicletas:
-            bikes = i
-            Cliente.pedido.append({Cliente.numPed:{'Nome':self.nome,'bikes':self.bicicletas}})
-        print(pedido)
+    def dataHoraLoc ():
+        data = datetime.now()
+        dataFormatada = data.strftime('%d/%m/%Y %H:%M')
+        return dataFormatada    
     def listaBikesSelecionadas (self,qtde):
         qtdeEmEstoque = Cliente.estoque()
         dtLoc = Cliente.dataHoraLoc()
@@ -71,22 +63,38 @@ class Cliente:
             return self.bicicletas
         else:
             return 'Estoque indisponível'
-    def dataHoraLoc ():
-        data = datetime.now()
-        dataFormatada = data.strftime('%d/%m/%Y %H:%M')
-        return dataFormatada
     def estoque():
         qtdeEstoque = 0
         for i in range (len(dados)):
             if dados[i]['status'] == 0:
                 qtdeEstoque += 1
         return qtdeEstoque
-cliente = Cliente('Edson Tomas',2)
 
-ped = cliente.listaBikesSelecionadas(5)
+    def gerarPedido (self,dtLoc):
+        bikes = {}
+        descr = 1      
+        Cliente.numPed += 1
+        for i in self.bicicletas:
+            bikes.update({descr:i})
+            descr += 1
+        teste = {Cliente.numPed:{self.nome:bikes}}
+        Cliente.pedido.append(teste)
+        
+        return Cliente.pedido
+        
+cliente = Cliente('Edson Tomas',2)
+cliente2 = Cliente('Ana Tomas',1)
+cliente.listaBikesSelecionadas(5)
 dat = Cliente.dataHoraLoc()
-cliente.gerarPedido(dat)
-cliente.gerarPedido(dat)
+cliente2.listaBikesSelecionadas(2)
+ped = cliente.gerarPedido(dat)
+
+ped2=cliente2.gerarPedido(dat)
+
+print(cliente2)
+
+
+
 
 
 
