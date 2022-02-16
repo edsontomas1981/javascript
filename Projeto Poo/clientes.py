@@ -2,33 +2,26 @@ import json
 import os.path
 import sys
 from datetime import datetime
-def dataHoraLoc ():
-    data = datetime.now()
-    dataFormatada = data.strftime('%d/%m/%Y %H:%M')
-    return dataFormatada
-   
+
+
 def carregaDados():
     with open(os.path.join(sys.path[0], 'dados.json'), 'r') as arq:
         dados = json.loads(arq.read())
     return dados
 dados = carregaDados()
-def estoque():
-    qtdeEstoque = 0
-    for i in range (len(dados)):
-        if dados[i]['status'] == 0:
-            qtdeEstoque += 1
-    return qtdeEstoque
+
 
 class Cliente:
-    pedido = 0       
+    pedido = []
+    numPed = 0
+
     def __init__(self,nome,tipoAluguel):
         self.nome = nome
         self.tipoAluguel = tipoAluguel # 1 por hora |2 por Dia | 3 por semana |4 Familia 
         self.bicicletas = []
         self.diaLocacao = ''
         self.horaLocacao = ''
-        
-    
+ 
     def __repr__(self):
         tipoLocacao = 0
         nome = self.nome
@@ -46,7 +39,7 @@ class Cliente:
             tipoLocacao = 'por dia'
         elif self.tipoAluguel == 3:
             tipoLocacao = 'por semana'
-        return f'{nome} sua nodalidade de locação é {tipoLocacao} você tem o total de {qtde} bikes locadas \n {resposta} '
+        return f'{nome} sua modalidade de locação é {tipoLocacao} você tem o total de {qtde} bikes locadas \n {resposta} '
 
     def verBicicletas (self):
         bikesDisponiveis = ''
@@ -60,28 +53,42 @@ class Cliente:
                 bikesDisponiveis += 'Id : '+id+'| Marca : ' +marca+'| Categoria : '+categoria+ '| Cor : '+cor +'\n'
         return bikesDisponiveis
     
-    def gerarPedido (self,Bikes:list,dtLoc):
-        pass           
-    
-    def alugarBicicletas (self,qtde):
-        qtdeEmEstoque = estoque()
-        dtLoc = dataHoraLoc()
+    def gerarPedido (self,dtLoc):
+        bikes = {}
+        pedido = [] 
+        Cliente.numPed += 1
+        for i in self.bicicletas:
+            bikes = i
+            Cliente.pedido.append({Cliente.numPed:{'Nome':self.nome,'bikes':self.bicicletas}})
+        print(pedido)
+    def listaBikesSelecionadas (self,qtde):
+        qtdeEmEstoque = Cliente.estoque()
+        dtLoc = Cliente.dataHoraLoc()
         if qtde <= qtdeEmEstoque:
             for i in range (qtde):
-                self.bicicletas.append({self.nome:{dados[i]}})
+                self.bicicletas.append(dados[i])
                 dados[i]['status'] = 1
-            print (self.bicicletas)
-            return 'Locação efetuada com sucesso !'
+            return self.bicicletas
         else:
             return 'Estoque indisponível'
+    def dataHoraLoc ():
+        data = datetime.now()
+        dataFormatada = data.strftime('%d/%m/%Y %H:%M')
+        return dataFormatada
+    def estoque():
+        qtdeEstoque = 0
+        for i in range (len(dados)):
+            if dados[i]['status'] == 0:
+                qtdeEstoque += 1
+        return qtdeEstoque
+cliente = Cliente('Edson Tomas',2)
+
+ped = cliente.listaBikesSelecionadas(5)
+dat = Cliente.dataHoraLoc()
+cliente.gerarPedido(dat)
+cliente.gerarPedido(dat)
 
 
-
-cliente = Cliente('Edson Tomas',1)
-cliente.alugarBicicletas(15)
-cliente.verBicicletas()
-print(cliente.verBicicletas())
-print(cliente)
 
 
    
