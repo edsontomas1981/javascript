@@ -14,12 +14,15 @@ dados = carregaDados()
 class Cliente:
     pedido = []
     numPed = 0
+    idCli = 0
     def __init__(self,nome,tipoAluguel):
         self.nome = nome
         self.tipoAluguel = tipoAluguel # 1 por hora |2 por Dia | 3 por semana |4 Familia 
         self.bicicletas = []
         self.diaLocacao = ''
         self.horaLocacao = ''
+        Cliente.idCli += 1
+        self.idCliente = Cliente.idCli
     def __repr__(self):
         tipoLocacao = 0
         nome = self.nome
@@ -84,7 +87,7 @@ class Cliente:
 cliente = Cliente('Edson Tomas',2)
 cliente2 = Cliente('Ana Tomas',1)
 cliente.mostraBikesDisponiveis
-print(cliente.mostraBikesDisponiveis())
+
 
 
 

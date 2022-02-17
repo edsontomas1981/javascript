@@ -1,6 +1,7 @@
 import json
 import os.path
 import sys
+import clientes
 def pegaDados():
     with open(os.path.join(sys.path[0], 'dados.json'), 'r') as arq:
         dados = json.loads(arq.read())
@@ -8,7 +9,7 @@ def pegaDados():
 dados = pegaDados()
 class Loja:
     numPed = 0
-    pedidos = []
+    listaPedidos = []
     def __init__(self):
         pass
     def calculaConta(self):
@@ -38,7 +39,7 @@ class Loja:
                         cor = dados[i]['cor']
                         qtdeEstoque += 1
                         print(f'Id :{id}| Marca :{marca:9s} | Categoria : {categoria} | Cor : {cor}')
-    def qtdeEstoque(self):
+    def qtdeEstoque():
             qtdeEstoque = 0
             for i in range (len(dados)):
                         status =  dados[i]['status']
@@ -47,26 +48,40 @@ class Loja:
             return qtdeEstoque
     
     @staticmethod
-    def listaBikesSelecionadas (self,qtde):
+    def selecionaBikes (qtde,cliente):
         qtdeEmEstoque = Loja.qtdeEstoque()
         if qtde <= qtdeEmEstoque:
             for i in range (qtde):
-                self.bicicletas.append(dados[i])
-                dados[i]['status'] = 1
-            return self.bicicletas
+                status = dados[i]['status']
+                if status == 0 :
+                    
+                    cliente.bicicletas.append(dados[i])
+                    dados[i]['status'] = 1
+                    dados[i]['alugadaPor'] = cliente.nome
+                    print(dados[i])
+            return cliente.bicicletas
         else:
             return 'Estoque indisponível'
-    @staticmethod
-    def pedidos(qtde):
+    def geraPedidos(self,qtde,cliente):
         numPed = Loja.numPed +1
-        selBikes = Loja.listaBikesSelecionadas(qtde)
+        selBikes = Loja.selecionaBikes(qtde,cliente)
         pedido = [numPed,selBikes]
-        Loja.pedidos.append(pedido)
-        print(Loja.pedidos)
+        loja.listaPedidos.append(pedido)
+        #print(loja.listaPedidos)
+        
 
 loja = Loja()
 #loja.relatorioBikes()
 #loja.mostrarEstoque()
-loja.pedidos(5)
+#print(clientes.cliente)
+cliente3 = clientes.Cliente("Sandra Mara",1)
+cliente4 = clientes.Cliente("Ana Tomas",1)
+
+loja.geraPedidos(5,cliente3)
+print('teste')
+loja.geraPedidos(8,cliente4)
+
+
+
 
     

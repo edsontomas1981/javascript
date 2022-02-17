@@ -4,8 +4,8 @@
         "marca": "CALOI",
         "categoria": "Aro 20",
         "cor": "preta",
-        "alugadaPor":"Edson Tomas",
-        "status":1
+        "alugadaPor":"",
+        "status":0
     },
     {
         "id": "DE40+002",
