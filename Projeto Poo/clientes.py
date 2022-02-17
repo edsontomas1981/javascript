@@ -39,7 +39,6 @@ class Cliente:
             tipoLocacao = 'por semana'
         return f'{nome} sua modalidade de locação é {tipoLocacao} você tem o total de {qtde} bikes locadas \n {resposta} '
     def mostraBikesDisponiveis (self):
-        bikesDisponiveis = ''
         for i in range (len(dados)):
             status =  dados[i]['status']
             if status == 0 :
@@ -47,8 +46,8 @@ class Cliente:
                 marca = dados[i]['marca']
                 categoria = dados[i]['categoria']
                 cor = dados[i]['cor']
-                bikesDisponiveis += 'Id : '+id+'| Marca : ' +marca+'| Categoria : '+categoria+ '| Cor : '+cor +'\n'
-        return bikesDisponiveis
+                print(f'Id :{id}| Marca :{marca:9s} | Categoria : {categoria} | Cor : {cor}')
+        
     def dataHoraLoc ():
         data = datetime.now()
         dataFormatada = data.strftime('%d/%m/%Y %H:%M')
@@ -84,14 +83,8 @@ class Cliente:
         
 cliente = Cliente('Edson Tomas',2)
 cliente2 = Cliente('Ana Tomas',1)
-cliente.listaBikesSelecionadas(5)
-dat = Cliente.dataHoraLoc()
-cliente2.listaBikesSelecionadas(2)
-ped = cliente.gerarPedido(dat)
-
-ped2=cliente2.gerarPedido(dat)
-
-print(cliente2)
+cliente.mostraBikesDisponiveis
+print(cliente.mostraBikesDisponiveis())
 
 
 

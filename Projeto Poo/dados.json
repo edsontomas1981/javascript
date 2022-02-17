@@ -4,13 +4,15 @@
         "marca": "CALOI",
         "categoria": "Aro 20",
         "cor": "preta",
-        "status":0
+        "alugadaPor":"Edson Tomas",
+        "status":1
     },
     {
         "id": "DE40+002",
         "marca": "MORMAII",
         "categoria": "Aro 26",
         "cor": "branca",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -18,6 +20,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 20",
         "cor": "cinza",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -25,6 +28,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 20",
         "cor": "rosa",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -32,6 +36,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 20",
         "cor": "amarela",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -39,6 +44,7 @@
         "marca": "CALOI",
         "categoria": "Aro 26",
         "cor": "roxa",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -46,6 +52,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 26",
         "cor": "bege",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -53,6 +60,7 @@
         "marca": "MORMAII",
         "categoria": "Aro 26",
         "cor": "cinza",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -60,6 +68,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 20",
         "cor": "branca",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -67,6 +76,7 @@
         "marca": "MORMAII",
         "categoria": "Aro 26",
         "cor": "preta",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -74,6 +84,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 20",
         "cor": "laranja",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -81,6 +92,7 @@
         "marca": "MORMAII",
         "categoria": "Aro 26",
         "cor": "azul",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -88,6 +100,7 @@
         "marca": "MORMAII",
         "categoria": "Aro 20",
         "cor": "rosa",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -95,6 +108,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 20",
         "cor": "branca",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -102,6 +116,7 @@
         "marca": "BTWIN",
         "categoria": "Aro 20",
         "cor": "azul",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -109,6 +124,7 @@
         "marca": "CALOI",
         "categoria": "Aro 26",
         "cor": "branca",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -116,6 +132,7 @@
         "marca": "CALOI",
         "categoria": "Aro 26",
         "cor": "preta",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -123,6 +140,7 @@
         "marca": "MORMAII",
         "categoria": "Aro 26",
         "cor": "marrom",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -130,6 +148,7 @@
         "marca": "MORMAII",
         "categoria": "Aro 20",
         "cor": "branca",
+        "alugadaPor":"",
         "status":0
     },
     {
@@ -137,5 +156,6 @@
         "marca": "CALOI",
         "categoria": "Aro 26",
         "cor": "rosa",
+        "alugadaPor":"",
         "status":0
     }]
