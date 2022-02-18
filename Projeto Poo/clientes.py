@@ -84,9 +84,6 @@ class Cliente:
         
         return Cliente.pedido
         
-cliente = Cliente('Edson Tomas',2)
-cliente2 = Cliente('Ana Tomas',1)
-cliente.mostraBikesDisponiveis
 
 
 
