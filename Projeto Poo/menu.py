@@ -1,17 +1,14 @@
-import platform
-#import clientes
-#import lojas
-#import estoque
-import os
-print(platform.system())
-print(platform.release())
+import lojas
+import clientes
+listaClientes=[]
+def criaLoja():
+    loja = lojas.Loja()
 
-def limpaTela():
-    so = platform.system()
-    if so == 'Linux':
-        os.system('clear')
-    
-print('--------------------------------------------------------')    
-limpaTela()
-    
-
+def criaCliente(nome,tipoAluguel,tempoAluguel):
+    nome=clientes.Cliente(nome,tipoAluguel,tempoAluguel)
+    listaClientes.append(nome)
+loja=criaLoja()
+criaCliente('Edson',1,5)
+criaCliente('Sandra',2,2)
+criaCliente('Ana',3,1)
+print(listaClientes)

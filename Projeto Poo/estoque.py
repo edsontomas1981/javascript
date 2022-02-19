@@ -1,8 +1,8 @@
 import json
 import os.path
 import sys
+import clientes
 
-from grpc import ClientCallDetails
 def obtemDados():
     with open(os.path.join(sys.path[0], 'dados.json'), 'r') as arq:
         dados = json.loads(arq.read())
@@ -32,8 +32,7 @@ class Estoque:
                 categoria = self.estoque[i]['categoria']
                 cor = self.estoque[i]['cor']
                 print(f'Id :{id}| Marca :{marca:9s} | Categoria : {categoria} | Cor : {cor}')
-    
-    def selecionaBikes (self,qtde,cliente):
+    def alugaBikes (self,qtde,cliente):
         disponivelEstoque = self.qtdeEmEstoque()
         if qtde <= disponivelEstoque:
             cont = 0
@@ -44,7 +43,8 @@ class Estoque:
                     self.estoque[i]['status'] = 1
                     self.estoque[i]['alugadaPor'] = cliente.nome
                     cont += 1
-                i += 1 
+                i += 1
+            return 'Operaçã efetuada com sucesso' 
         else:
             return 'Estoque indisponível'
     def qtdeEmEstoque(self):
@@ -53,6 +53,15 @@ class Estoque:
             if self.estoque[i]['status'] == 0:
                 qtdeEstoque += 1
         return qtdeEstoque 
-estoque1=Estoque()
-#estoque1.relatorioEstoque()
+    def devolveBikes(self,cliente):
+        qtdeBikesDevolvidas = 0
+        nome = cliente.nome
+        for i in range (len(self.estoque)):
+            if nome == self.estoque[i]['alugadaPor']:
+                self.estoque[i]['status'] = 0
+                self.estoque[i]['alugadaPor'] = ''
+                qtdeBikesDevolvidas += 1
+        return qtdeBikesDevolvidas
+
+
         
