@@ -1,7 +1,6 @@
 import json
 import os.path
 import sys
-import clientes
 
 def obtemDados():
     with open(os.path.join(sys.path[0], 'dados.json'), 'r') as arq:

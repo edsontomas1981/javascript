@@ -38,10 +38,10 @@ class Loja:
         
         elif tipoAluguel == 3: # aluguel por semana
             if qdteBikesDevolvidas < 3:
-                valorPagar = (tempoAluguel*qdteBikesDevolvidas)*5
+                valorPagar = (tempoAluguel*qdteBikesDevolvidas)*100
                 return Loja.strValPag(tempoAluguel,'semanas',qdteBikesDevolvidas,valorPagar)
             else:
-                valorPagar = (tempoAluguel*qdteBikesDevolvidas)*5
+                valorPagar = (tempoAluguel*qdteBikesDevolvidas)*100
                 valorPagar = valorPagar-(valorPagar*30/100)
                 return Loja.strValPag(tempoAluguel,'semanas',qdteBikesDevolvidas,valorPagar)
     def relatEstoque(self):
@@ -79,21 +79,53 @@ class Cliente:
 #3º parametro trata do tempo de locação,valor inteiro que é diferenciado no momento do calculo pelo 2º parametro. 
 cliente1 = Cliente('Edson Tomas',1,5)
 cliente2 = Cliente('Ana Tomas',2,5)
+cliente3 = Cliente('Sandra Mara',3,2)
 loja1 = Loja()
+loja2 = Loja()
 # Chamadas a partir do objeto cliente
+print('Estoque atual da loja')
+print('--------------------------------------------------------')
 cliente1.verEstoque(loja1)
 print('--------------------------------------------------------')
+print('Cliente 1 aluga 2 bikes')
+print('--------------------------------------------------------')
 cliente1.alugarBikes(loja1,2)
+print('--------------------------------------------------------')
+print('Listagem de bikes alugadas do cliente 1')
+print('--------------------------------------------------------')
 cliente1.relatCliente(loja1)
+cliente3.alugarBikes(loja2,5)
 print('--------------------------------------------------------')
 # Chamadas a partir do objeto loja
+print('Cliente 2 aluga 3 bikes')
+print('--------------------------------------------------------')
 loja1.alugaBikes(3,cliente2)
-print(loja1.alugaBikes(21,cliente1))#qtde de bicicletas maior que o estoque.
+print('--------------------------------------------------------')
+print('exibe um relatorio completo com bicicletas alugadas e disponiveis')
+print('--------------------------------------------------------')
+loja1.relatEstoque()
+print('--------------------------------------------------------')
+print('Tentativa de alugar uma quantidade de bicicletas maior do o estoque')
+print('--------------------------------------------------------')
+print(loja1.alugaBikes(16,cliente1))
+print('--------------------------------------------------------')
+print('Devolução das bicicletas cliente 2')
 print('--------------------------------------------------------')
 print(loja1.devolveBikes(cliente2))
 print('--------------------------------------------------------')
-
-
+print('Exibição do estoque somente com os alugueis do cliente 1')
+print('--------------------------------------------------------')
+loja1.exibeEstoque()
+print('--------------------------------------------------------')
+print('Devolução das bicicletas cliente 1 ')
+print('--------------------------------------------------------')
+print(loja1.devolveBikes(cliente1))
+print('--------------------------------------------------------')
+loja1.exibeEstoque()
+print('--------------------------------------------------------')
+loja2.exibeEstoque()
+print('--------------------------------------------------------')
+print(loja2.devolveBikes(cliente3))
 
 
 
