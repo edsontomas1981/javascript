@@ -1,0 +1,5 @@
+Você foi contratado pelo Magazine Luiza para desenvolver um sistema que irá auxiliá-los a escolher os produtos que irão receber desconto na próxima Black Friday.
+
+Para isso, você terá acesso a uma API que fornece alguns dados dos produtos: um ID (identificador único), o preço e a categoria do produto. Uma função pronta irá retornar para você o conjunto de dados já em formato adequado: uma lista de dicionários, onde cada dicionário representa um produto.
+
+Você deverá implementar as funções para listar todas as categorias, listar todos os produtos de uma categoria, identificar o produto mais barato e o mais caro de uma categoria e o top 10 de produtos mais baratos e mais caros de toda a base de dados.
